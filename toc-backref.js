@@ -17,6 +17,7 @@
         hList.each(function (index) {
             tocId = tocIdPrefix + index;
             tocBackRef = $("<a class='toc-backref p-1' href='#{0}' rel='nofollow' target='_self'></a>".format(tocId));
+
             $(this).append(tocBackRef);
 
             hId = $(this).prop('id');
@@ -29,7 +30,7 @@
             }
 
             hText = $(this).text();
-            tocRef = $('<a class="reference internal" id="#{0}" href="{1}">{2}</a>'.format(tocId, hId, hText));
+            tocRef = $('<a class="reference internal" id="{0}" href="#{1}">{2}</a>'.format(tocId, hId, hText));
             tocLi = $('<li></li>').append(tocRef);
             tocUl.append(tocLi);
         });
