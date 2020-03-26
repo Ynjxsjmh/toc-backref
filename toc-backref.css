@@ -1,0 +1,13 @@
+a.toc-backref::after {
+    content: "↩";
+    visibility: hidden;
+}
+
+h1:hover a.toc-backref::after,
+h2:hover a.toc-backref::after,
+h3:hover a.toc-backref::after,
+h4:hover a.toc-backref::after,
+h5:hover a.toc-backref::after,
+h6:hover a.toc-backref::after {
+    visibility: visible;
+}
