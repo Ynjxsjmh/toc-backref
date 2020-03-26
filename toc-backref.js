@@ -43,7 +43,7 @@
             tocUl.append(tocLi);
         });
 
-        $(contentSelector).before(tocUl);
+        $(contentSelector).prepend(tocUl);
 
         return true;
     };
