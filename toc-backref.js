@@ -9,9 +9,9 @@
      };
 
     let generateToc = ( contentSelector, hTagsArr, modest=true) => {
-        var tocUl = $('<ul class="toc-body"></ul>');
+        var tocUl = $('<ul class="toc-body"></ul>'), tocId, tocLi, tocRef, tocBackRef;
         var tocIdPrefix = "toc";
-        var content = $(contentSelector), tocId, hId, hText, tocLi, tocRef, tocBackRef;
+        var content = $(contentSelector), hId, hText, hTagName;
         var hList = content.find(hTagsArr.join(','));
 
         hList.each(function (index) {
@@ -38,7 +38,8 @@
             }
 
             tocRef = $('<a class="reference internal" id="{0}" href="#{1}">{2}</a>'.format(tocId, hId, hText));
-            tocLi = $('<li></li>').append(tocRef);
+            hTagName = $(this).prop('tagName').toLowerCase();
+            tocLi = $('<li class="{0}_nav"></li>'.format(hTagName)).append(tocRef);
             tocUl.append(tocLi);
         });
 
