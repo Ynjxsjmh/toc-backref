@@ -13,6 +13,8 @@ Add JS and CSS to your project.
 
 # Usage
 
+Add the following code to your proper file with `<script></script>` around.
+
 ```
 $.generateToc('.post-container .post-content', ['h1', 'h2', 'h3']);
 ```
