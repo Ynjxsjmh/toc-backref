@@ -9,9 +9,9 @@
      };
 
     let generateToc = (contentSelector, hTagsArr ) => {
-        var toc = $('<ul class="toc-body"></ul>');
+        var tocUl = $('<ul class="toc-body"></ul>');
         var tocIdPrefix = "toc";
-        var content = $(contentSelector), tocId, hId, text, li, tocRef, tocBackRef;
+        var content = $(contentSelector), tocId, hId, hText, tocLi, tocRef, tocBackRef;
         var hList = content.find(hTagsArr.join(','));
 
         hList.each(function (index) {
@@ -19,14 +19,14 @@
             tocBackRef = $("<a class='toc-backref p-1' href='#{0}' rel='nofollow' target='_self'></a>".format(tocId));
             $(this).append(tocBackRef);
 
-            text = $(this).text();
+            hText = $(this).text();
             hId = "#"+$(this).prop('id');
-            tocRef = $('<a class="reference internal" id="{0}" href="{1}">{2}</a>'.format(tocId, hId, text));
-            li = $('<li></li>').append(tocRef);
-            toc.append(li);
+            tocRef = $('<a class="reference internal" id="{0}" href="{1}">{2}</a>'.format(tocId, hId, hText));
+            tocLi = $('<li></li>').append(tocRef);
+            tocUl.append(tocLi);
         });
 
-        $(contentSelector).before(toc);
+        $(contentSelector).before(tocUl);
 
         return true;
     };
