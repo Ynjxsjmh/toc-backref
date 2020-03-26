@@ -1,3 +1,12 @@
+a.toc-backref {
+    text-decoration: none !important;
+    color: rgb(74, 77, 79);
+}
+
+a.toc-backref:hover {
+    text-decoration: none !important;
+}
+
 a.toc-backref::after {
     content: "↩";
     visibility: hidden;
