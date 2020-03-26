@@ -10,8 +10,8 @@
 
     let generateToc = (contentSelector, hTagsArr ) => {
         var toc = $('<ul class="toc-body"></ul>');
-        var content = $(contentSelector), tocId, hId, text, li, tocRef, tocBackRef;
         var tocIdPrefix = "toc";
+        var content = $(contentSelector), tocId, hId, text, li, tocRef, tocBackRef;
         var hList = content.find(hTagsArr.join(','));
 
         hList.each(function (index) {
