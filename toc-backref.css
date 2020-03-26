@@ -20,3 +20,22 @@ h5:hover a.toc-backref::after,
 h6:hover a.toc-backref::after {
     visibility: visible;
 }
+
+.toc-body .h1_nav {
+    margin-left: 0;
+}
+.toc-body .h2_nav {
+    margin-left: 1rem;
+}
+.toc-body .h3_nav {
+    margin-left: 2rem;
+}
+.toc-body .h4_nav {
+    margin-left: 3rem;
+}
+.toc-body .h5_nav {
+    margin-left: 4rem;
+}
+.toc-body .h6_nav {
+    margin-left: 5rem;
+}
