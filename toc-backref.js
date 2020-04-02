@@ -1,3 +1,14 @@
+/**
+ * Summary.
+ *
+ * Associate table of content with corresponding header.
+ *
+ * @link   https://github.com/Ynjxsjmh/toc-backref
+ * @author Ynjxsjmh
+ * @since  2020.03.27
+ */
+
+
 (($) => {
   String.prototype.format = function() {
     var formatted = this;
