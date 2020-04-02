@@ -19,7 +19,7 @@ Add the following code to your proper file with `<script></script>` around.
 $.generateToc('.post-container .post-content', ['h1', 'h2', 'h3']);
 ```
 
-- First parameter is the selector of your post content.
-- Second parameter is the header tag you want to have this function.
-- Third parameter is an optional bool value, default is `true`. Have a try to see what it does.
+- The first parameter is the selector of your post content.
+- The second parameter is the header tag you want to have this function.
+- The third parameter is an optional bool value, default is `true`. Have a try to see what it does.
 
