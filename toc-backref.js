@@ -8,6 +8,36 @@
     return formatted;
   };
 
+  let tocBackRefProxy = (contentSelector, hTagsArr, tocUlSelector='undefined', modest=true) => {
+    if (tocUlSelector == 'undefined') {
+      var isTocExist = false;
+      var possibleUlSelector = contentSelector + " ul:first";
+      var ul = $(possibleUlSelector);
+
+      if ($(ul).length) {
+        var li = $("li", ul).first();
+
+        if ($(li).length) {
+          var a = $(li).find('a:first');
+          var content = $(contentSelector);
+          var h1 = content.find("h1").first();
+
+          if ($(h1).text() == $(a).text()) {
+            isTocExist = true;
+          }
+        }
+      }
+
+      if (isTocExist) {
+        generateBackRef(possibleUlSelector, contentSelector, hTagsArr, modest);
+      } else {
+        generateToc(contentSelector, hTagsArr, modest);
+      }
+    } else {
+      generateBackRef(tocUlSelector, contentSelector, hTagsArr, modest);
+    }
+  };
+
   let generateBackRef = (tocUlSelector, contentSelector, hTagsArr, modest=true) => {
     /**
      * 1. toc part
@@ -102,6 +132,6 @@
     return true;
   };
 
-  $.extend({ generateToc, generateBackRef });
+  $.extend({ tocBackRefProxy });
 
 })($);
