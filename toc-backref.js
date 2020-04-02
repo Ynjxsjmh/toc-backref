@@ -57,7 +57,6 @@
 
         hList.each(function (index) {
             tocId = tocIdPrefix + index;
-            tocBackRef = $("<a class='toc-backref p-1' href='#{0}' rel='nofollow' target='_self'></a>".format(tocId));
             hText = $(this).text();
 
             if (modest) {
