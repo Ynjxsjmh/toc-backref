@@ -9,6 +9,20 @@
   };
 
   let generateBackRef = (tocUlSelector, contentSelector, hTagsArr, modest=true) => {
+    /**
+     * 1. toc part
+     *    1.1 get the href of li
+     *    1.2 get the text of li
+     *    1.3 get the id of li. If it doesn't have one, generate for it
+     * 2. header part
+     *    2.1 get the id of header
+     *    2.2 get the text of header
+     *    2.3 set the href of header to 1.3
+     *        When to set?
+     *        - if 1.1 == 2.1
+     *        - if 1.1 != 2.1, judge if 1.2 == 2.2
+     */
+
     var tocUl = $(tocUlSelector), tocId, tocBackRef;
     var tocIdPrefix = "toc";
     var liList = $("li", tocUl), li;
