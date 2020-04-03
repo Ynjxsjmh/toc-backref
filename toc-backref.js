@@ -33,7 +33,7 @@
           var content = $(contentSelector);
           var h1 = content.find("h1").first();
 
-          if ($(h1).text() == $(a).text()) {
+          if ($(a).length && $(h1).text() == $(a).text()) {
             isTocExist = true;
           }
         }
