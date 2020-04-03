@@ -39,7 +39,7 @@ $.generateToc('.post-container .post-content', ['h1', 'h2', 'h3'], tocUlSelector
 ```
 
 - The first, second and the hidden `modest` parameters are the same with above.
-- If you keep `tocUlSelector` with default value, it will check if the first ul of article is a possible toc by using if there exists a tag under li tag.
-  - If thers doesn't exist one, generate a toc in the begining of article and associate it with the targeted header.
+- If you keep `tocUlSelector` with default value, it will check if the first ul of article selected by `contentSelector` is a possible toc by using if there exists a tag under li tag.
+  - If there doesn't exist one, generate a toc in the begining of article and associate it with the targeted header.
   - If there exists one, fall to the next condition.
 - If you set the value of `tocUlSelector`, it won't generate a new toc but just associate the original one with the targeted header.
