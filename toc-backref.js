@@ -43,7 +43,7 @@
           var aText = $(firstA).text();
 
           if ($(firstA).length &&
-              (hText == aText || hText.includes(aText.replace('.', '')))) {
+              (hText == aText || hText.replace(/\./g, '').includes(aText.replace(/\./g, '')))) {
             isTocExist = true;
           }
         }
@@ -93,7 +93,7 @@
         aText = $(a).text();
 
         if (aHref == hId || aText == hText ||
-            hText.includes(aText.replace('.', ''))) {
+            hText.replace(/\./g, '').includes(aText.replace(/\./g, ''))) {
           if (aId == '' || aId == null || aId == 'undefined') {
             aId = tocId;
             $(a).attr("id", aId);
