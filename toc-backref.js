@@ -29,11 +29,21 @@
         var firstLi = $("li", firstUl).first();
 
         if ($(firstLi).length) {
-          var firstA = $(firstLi).find("a:first");
+          var firstA = $(firstLi).find("a:first"), firstH;
           var content = $(contentSelector);
-          var firstH1 = content.find("h1").first();
 
-          if ($(firstA).length && ($(firstH1).text() == $(firstA).text())) {
+          for (var i = 0; i < hTagsArr.length; i++) {
+            firstH = content.find(hTagsArr[i]).first();
+            if ($(firstH).length > 0) {
+              break;
+            }
+          }
+
+          var hText = $(firstH).text();
+          var aText = $(firstA).text();
+
+          if ($(firstA).length &&
+              (hText == aText || hText.includes(aText.replace('.', '')))) {
             isTocExist = true;
           }
         }
@@ -82,7 +92,8 @@
         aHref = $(a).prop('href');
         aText = $(a).text();
 
-        if (aHref == hId || aText == hText) {
+        if (aHref == hId || aText == hText ||
+            hText.includes(aText.replace('.', ''))) {
           if (aId == '' || aId == null || aId == 'undefined') {
             aId = tocId;
             $(a).attr("id", aId);
