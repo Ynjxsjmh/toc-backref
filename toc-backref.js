@@ -23,17 +23,17 @@
     if (tocUlSelector == 'undefined') {
       var isTocExist = false;
       var possibleUlSelector = contentSelector + " ul:first";
-      var ul = $(possibleUlSelector);
+      var firstUl = $(possibleUlSelector);
 
-      if ($(ul).length) {
-        var li = $("li", ul).first();
+      if ($(firstUl).length) {
+        var firstLi = $("li", firstUl).first();
 
-        if ($(li).length) {
-          var a = $(li).find('a:first');
+        if ($(firstLi).length) {
+          var firstA = $(firstLi).find("a:first");
           var content = $(contentSelector);
-          var h1 = content.find("h1").first();
+          var firstH1 = content.find("h1").first();
 
-          if ($(a).length && $(h1).text() == $(a).text()) {
+          if ($(firstA).length && ($(firstH1).text() == $(firstA).text())) {
             isTocExist = true;
           }
         }
